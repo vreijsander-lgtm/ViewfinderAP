@@ -21,7 +21,7 @@ Filters
 On/off
 
 
-#Setup
+# Setup
 
 Install melonloader for this game
 then download the dll file and put it into mods folder
