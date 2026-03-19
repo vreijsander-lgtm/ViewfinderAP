@@ -19,3 +19,10 @@ All levels incl optional lvls
 
 Filters
 On/off
+
+
+#Setup
+
+Install melonloader for this game
+then download the dll file and put it into mods folder
+thats it
