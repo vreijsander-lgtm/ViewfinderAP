@@ -4,7 +4,6 @@ from worlds.AutoWorld import World, WebWorld
 from .Options import Options
 
 
-# ===== BASE ID =====
 viewfinder_base_id = 9000000
 
 
@@ -21,7 +20,6 @@ class ViewfinderWorld(World):
 
     topology_present: ClassVar[bool] = False
 
-    # ===== ITEMS =====
     item_name_to_id: ClassVar[Dict[str, int]] = {
         "Camera": viewfinder_base_id + 2,
         "Chapter 1 Level 1-1": viewfinder_base_id + 3,
@@ -101,7 +99,6 @@ class ViewfinderWorld(World):
         "Chapter 5 Unlock": viewfinder_base_id + 76,
     }
 
-    # ===== LOCATIONS =====
     location_name_to_id: ClassVar[Dict[str, int]] = {
         "Chapter 1 Level 1-1": viewfinder_base_id + 103,
         "Chapter 1 Level 1-2": viewfinder_base_id + 104,
@@ -181,7 +178,6 @@ class ViewfinderWorld(World):
         "Chapter 1 Completed": viewfinder_base_id + 177,
     }
 
-    # ===== ITEM CREATION =====
     def create_item(self, name: str) -> Item:
         return Item(
             name,
@@ -190,7 +186,6 @@ class ViewfinderWorld(World):
             self.player
         )
 
-    # ===== LOCATION CREATION =====
     def create_location(self, name: str, region: Region) -> Location:
         return Location(
             self.player,
@@ -199,7 +194,6 @@ class ViewfinderWorld(World):
             region
         )
 
-    # ===== REGIONS =====
     def create_regions(self):
         menu = Region("Menu", self.player, self.multiworld)
         hub = Region("Hub", self.player, self.multiworld)
@@ -211,7 +205,6 @@ class ViewfinderWorld(World):
             loc = self.create_location(name, hub)
             hub.locations.append(loc)
 
-    # ===== ITEMS =====
     def create_items(self):
         itempool: List[Item] = []
 
@@ -220,12 +213,10 @@ class ViewfinderWorld(World):
 
         self.multiworld.itempool += itempool
 
-    # ===== RULES =====
     def set_rules(self):
         self.multiworld.completion_condition[self.player] = \
             lambda state: state.has("Chapter 5 ", self.player)
 
-    # ===== SLOT DATA =====
     def fill_slot_data(self):
         return self.options.as_dict(
             "progressive_camera",
