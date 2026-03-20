@@ -4,6 +4,7 @@ from worlds.AutoWorld import World, WebWorld
 from .Options import Options
 
 
+# ===== BASE ID =====
 viewfinder_base_id = 9000000
 
 
@@ -20,8 +21,8 @@ class ViewfinderWorld(World):
 
     topology_present: ClassVar[bool] = False
 
+    # ===== ITEMS =====
     item_name_to_id: ClassVar[Dict[str, int]] = {
-        "Camera": viewfinder_base_id + 2,
         "Chapter 1 Level 1-1": viewfinder_base_id + 3,
         "Chapter 1 Level 1-2": viewfinder_base_id + 4,
         "Chapter 1 Level 1-3": viewfinder_base_id + 5,
@@ -93,12 +94,19 @@ class ViewfinderWorld(World):
         "Chapter 5 Level 4-7": viewfinder_base_id + 70,
         "Chapter 5 Level 4-8": viewfinder_base_id + 71,
         "Chapter 5 Level 4-9": viewfinder_base_id + 72,
-        "Chapter 2 Unlock": viewfinder_base_id + 73,
-        "Chapter 3 Unlock": viewfinder_base_id + 74,
-        "Chapter 4 Unlock": viewfinder_base_id + 75,
-        "Chapter 5 Unlock": viewfinder_base_id + 76,
+        "Filler 1": viewfinder_base_id + 73,
+        "Filler 2": viewfinder_base_id + 74,
+        "Filler 3": viewfinder_base_id + 75,
+        "Filler 4": viewfinder_base_id + 76,
+        "Filler 5": viewfinder_base_id + 77,
+        "Filler 6": viewfinder_base_id + 78,
+        "Filler 7": viewfinder_base_id + 79,
+        "Filler 8": viewfinder_base_id + 80,
+        "Filler 9": viewfinder_base_id + 81,
+        "Filler 10": viewfinder_base_id + 82,
     }
 
+    # ===== LOCATIONS =====
     location_name_to_id: ClassVar[Dict[str, int]] = {
         "Chapter 1 Level 1-1": viewfinder_base_id + 103,
         "Chapter 1 Level 1-2": viewfinder_base_id + 104,
@@ -109,13 +117,16 @@ class ViewfinderWorld(World):
         "Chapter 1 Level 2-4": viewfinder_base_id + 108,
         "Chapter 1 Level 3-1": viewfinder_base_id + 109,
         "Chapter 1 Level 3-2": viewfinder_base_id + 110,
+        "Chapter 1 Level 4": viewfinder_base_id + 173,
         "Chapter 2 Level 1-1": viewfinder_base_id + 111,
+        "Chapter 2 Level 1-2": viewfinder_base_id + 172,
         "Chapter 2 Level 1-3": viewfinder_base_id + 112,
         "Chapter 2 Level 2-1": viewfinder_base_id + 113,
         "Chapter 2 Level 2-2": viewfinder_base_id + 114,
         "Chapter 2 Level 2-3": viewfinder_base_id + 115,
         "Chapter 2 Level 3-1": viewfinder_base_id + 116,
         "Chapter 2 Level 3-2": viewfinder_base_id + 117,
+        "Chapter 2 Level 4": viewfinder_base_id + 174,
         "Chapter 3 Level 1-1": viewfinder_base_id + 118,
         "Chapter 3 Level 2-1": viewfinder_base_id + 119,
         "Chapter 3 Level 2-2": viewfinder_base_id + 120,
@@ -134,6 +145,9 @@ class ViewfinderWorld(World):
         "Chapter 3 Level 5-3": viewfinder_base_id + 133,
         "Chapter 3 Level 5-4": viewfinder_base_id + 134,
         "Chapter 3 Level 5-5": viewfinder_base_id + 135,
+        "Chapter 3 Level 6-1": viewfinder_base_id + 175,
+        "Chapter 3 Level 6-2": viewfinder_base_id + 176,
+        "Chapter 3 Level 6-3": viewfinder_base_id + 177,
         "Chapter 4 Level 1-1": viewfinder_base_id + 136,
         "Chapter 4 Level 1-2": viewfinder_base_id + 137,
         "Chapter 4 Level 1-3": viewfinder_base_id + 138,
@@ -141,16 +155,20 @@ class ViewfinderWorld(World):
         "Chapter 4 Level 2-2": viewfinder_base_id + 140,
         "Chapter 4 Level 2-3": viewfinder_base_id + 141,
         "Chapter 4 Level 2-4": viewfinder_base_id + 142,
-        "Chapter 4 Level 3-1": viewfinder_base_id + 143,
-        "Chapter 4 Level 3-2": viewfinder_base_id + 144,
-        "Chapter 4 Level 3-3": viewfinder_base_id + 145,
-        "Chapter 4 Level 3-4": viewfinder_base_id + 146,
-        "Chapter 4 Level 3-5": viewfinder_base_id + 147,
-        "Chapter 4 Level 3-6": viewfinder_base_id + 148,
-        "Chapter 4 Level 4-1": viewfinder_base_id + 149,
-        "Chapter 4 Level 4-2": viewfinder_base_id + 150,
-        "Chapter 4 Level 4-3": viewfinder_base_id + 151,
-        "Chapter 4 Level 4-4": viewfinder_base_id + 152,
+        "Chapter 4 Level 6-1": viewfinder_base_id + 143,
+        "Chapter 4 Level 6-2": viewfinder_base_id + 144,
+        "Chapter 4 Level 6-3": viewfinder_base_id + 145,
+        "Chapter 4 Level 6-4": viewfinder_base_id + 146,
+        "Chapter 4 Level 6-5": viewfinder_base_id + 147,
+        "Chapter 4 Level 6-6": viewfinder_base_id + 148,
+        "Chapter 4 Level 7-1": viewfinder_base_id + 149,
+        "Chapter 4 Level 7-2": viewfinder_base_id + 150,
+        "Chapter 4 Level 7-3": viewfinder_base_id + 151,
+        "Chapter 4 Level 3": viewfinder_base_id + 152,
+        "Chapter 4 Level 4": viewfinder_base_id + 179,
+        "Chapter 4 Level 5": viewfinder_base_id + 180,
+        "Chapter 4 Level 8": viewfinder_base_id + 181,
+        "Chapter 4 Level 9": viewfinder_base_id + 182,
         "Chapter 5 Level 1-1": viewfinder_base_id + 153,
         "Chapter 5 Level 1-2": viewfinder_base_id + 154,
         "Chapter 5 Level 1-3": viewfinder_base_id + 155,
@@ -171,13 +189,9 @@ class ViewfinderWorld(World):
         "Chapter 5 Level 4-7": viewfinder_base_id + 170,
         "Chapter 5 Level 4-8": viewfinder_base_id + 171,
         "Chapter 5 Level 4-9": viewfinder_base_id + 172,
-        "Chapter 2 Completed": viewfinder_base_id + 173,
-        "Chapter 3 Completed": viewfinder_base_id + 174,
-        "Chapter 4 Completed": viewfinder_base_id + 175,
-        "Chapter 5 Completed": viewfinder_base_id + 176,
-        "Chapter 1 Completed": viewfinder_base_id + 177,
     }
 
+    # ===== ITEM CREATION =====
     def create_item(self, name: str) -> Item:
         return Item(
             name,
@@ -186,6 +200,7 @@ class ViewfinderWorld(World):
             self.player
         )
 
+    # ===== LOCATION CREATION =====
     def create_location(self, name: str, region: Region) -> Location:
         return Location(
             self.player,
@@ -194,6 +209,7 @@ class ViewfinderWorld(World):
             region
         )
 
+    # ===== REGIONS =====
     def create_regions(self):
         menu = Region("Menu", self.player, self.multiworld)
         hub = Region("Hub", self.player, self.multiworld)
@@ -205,6 +221,7 @@ class ViewfinderWorld(World):
             loc = self.create_location(name, hub)
             hub.locations.append(loc)
 
+    # ===== ITEMS =====
     def create_items(self):
         itempool: List[Item] = []
 
@@ -213,10 +230,12 @@ class ViewfinderWorld(World):
 
         self.multiworld.itempool += itempool
 
+    # ===== RULES =====
     def set_rules(self):
         self.multiworld.completion_condition[self.player] = \
-            lambda state: state.has("Chapter 5 ", self.player)
+            lambda state: state.has("Chapter 5 Level 4-9", self.player)
 
+    # ===== SLOT DATA =====
     def fill_slot_data(self):
         return self.options.as_dict(
             "progressive_camera",
